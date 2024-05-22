@@ -1,0 +1,115 @@
+*{
+    margin: 0;  
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(26,7,59);
+    background: linear-gradient(90deg, rgba(26,7,59,0.9261905445772058) 0%, rgba(22,90,196,0.9542017490589986) 100%); 
+}
+
+.app{
+    text-align: center;
+    background: #eee;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;   
+    border-radius: 10px ;
+    padding: 30px;
+    transform: translateY(-150%);
+    animation: updown 0.6s ease-in-out forwards ;
+}
+
+@keyframes updown {
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.app h1{
+    font-size: 2rem; 
+    color: #001e4d;
+    font-weight: 600;
+    border-bottom: 1px solid #444;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.quiz{
+    padding: 20px 0; 
+    transition: all 0.4s ease-in-out;
+}
+.quiz h2{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.btn{
+    background: #eee;
+    color: #333;
+    font-weight: 500;   
+    border: 1px solid #333;
+    padding: 10px ;
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s ;
+
+}
+.btn:hover:not([disabled]){
+    background:#333;
+    color: #eee;
+}
+.btn:disabled{
+    cursor: not-allowed;
+}
+#next-btn{
+    background: #001e4d;
+    color: #eee;
+    font-weight: 500;   
+    width: 150px;
+    border: 0;  
+    padding: 10px;
+    margin: 20px auto  0;
+    border-radius: 4px;
+    cursor: pointer;    
+    display: none; 
+    transition: all 0.4s ;
+}
+
+#highScore{
+    margin-bottom: 12px;
+}
+
+.reset{
+    display: flex;
+    
+}
+.reset .reset-btn{
+    display: none; 
+    margin: 100px auto 100px;   
+    background: #eee;
+    color: #001e4d;
+    font-weight: 500;   
+    width: 150px;
+    border: 0;  
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;    
+    transition: all 0.4s ;
+    transform: translateY(-550%);
+    animation: updown .7s ease-in-out forwards ;
+      
+}
+
+
+
+.correct{
+    background: #9aeabc;
+}
+.incorrect{
+    background: #ff9393;
+}

@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;  
+    padding: 0  ;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(0,73,83,1) 0%, rgba(74,93,35,1) 100%);
+    padding: 10px;
+}
+.todo-app{
+    width: 100%;
+    max-width: 430px;
+    background: #fff;
+    margin: 100px auto;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+
+}
+
+.todo-app h2{
+    color: #002365;
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px;   
+}
+
+.todo-app h2 img{
+    width: 28px;
+    margin-left: 14px;
+    border-radius: 5px;
+    filter: invert(23%);
+}
+
+.row{
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(0, 73, 83, 0.43) 0%, rgba(74, 93, 35, 0.43) 100%);
+    padding-left: 30px;
+    margin-bottom: 23px ;   
+    border-radius: 32px;
+
+
+}
+
+.row button{
+    margin-left:-4.6rem;
+}
+
+input{
+    flex: 1;    
+    border:  none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px 35px;
+    background: linear-gradient(135deg, rgba(33, 157, 173, 0.736) 0%, rgb(180, 114, 44) 100%);
+    color:#ffffff;
+    font-size: 16px;
+    border-radius:  42px;
+    cursor: pointer;
+
+}
+ul li{
+    list-style : none;
+    font-size: 18px;
+    padding: 12px 8px 12px 40px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: "";
+    position: absolute; 
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background-image: url(To-Do-Img/images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px; 
+    left: 8px;
+}
+
+ul li.done{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.done::before{
+    background-image: url(To-Do-Img/images/checked.png);
+}
+
+ul li span{
+    position: absolute; 
+    right: 0;
+    top: 4px;
+    width: 40px;
+    height: 40px;
+    font-size: 23px;
+    color: #555;
+    line-height: 40px;
+    text-align: center; 
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: rgba(0, 73, 83, 0.43);
+}
+

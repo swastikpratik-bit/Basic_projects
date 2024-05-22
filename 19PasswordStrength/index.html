@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Strength</title>
+</head>
+<body>
+    <div class="container">
+        <div class="input-box">
+            <input type="password" name="" id="password" placeholder="Password">
+            <button type="submit"><img src="./arrow.png" alt=""></button>
+            <p id="message">Password is <span id="strenght"></span></p>
+        </div>
+    </div>
+    
+
+<script>
+    var pas = document.getElementById("password");
+    var msg = document.getElementById("message");
+    var st = document.getElementById("strenght");
+
+
+    pas.addEventListener("input",()=>{
+        if(pas.value.length > 0){
+            msg.style.display = "block"
+        }
+        else{
+            msg.style.display = "none"
+            pas.style.borderColor = "#810040";
+            st.style.color = "white";
+
+        }
+
+        if(pas.value.length < 4){
+            st.innerHTML = "weak";
+            pas.style.borderColor = "#ff5925";
+            st.style.color = "ff5925";
+
+        }
+        
+        else if(pas.value.length >= 4 && pas.value.length <8){
+            st.innerHTML = "medium";
+            st.style.color = "yellow";
+            pas.style.borderColor = "yellow";
+
+        }
+        else if(pas.value.length >= 8){
+            st.innerHTML = "strong";
+            st.style.color = "26d730";
+            pas.style.borderColor = "#26d730";
+        }
+        
+        
+    })
+    
+
+
+</script>
+</body>
+</html>

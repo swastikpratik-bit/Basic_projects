@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="" defer></script>
+    <title>Toast Notification</title>
+
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="showToast(SuccessMessage)">Success</button>
+        <button onclick="showToast(ErrorMessage)">Error</button>
+        <button onclick="showToast(InvalidMessage)">Invalid</button>
+    </div>
+
+    <di id="toastBox">
+
+    </di>
+
+
+<script>
+
+const toastBox = document.getElementById("toastBox");
+let SuccessMessage = '<i class="fa-solid fa-circle-check"></i> Successfully Submitted';
+let ErrorMessage = '<i class="fa-solid fa-circle-xmark"></i> Please fix the error!';
+let InvalidMessage = '<i class="fa-solid fa-circle-exclamation"></i> Invalid input, check again';
+
+function showToast(m){
+    let toast = document.createElement("div");
+    toast.classList.add("toast");
+    toast.innerHTML = m;
+    toastBox.appendChild(toast);
+
+    if(m.includes('error')){
+        toast.classList.add('error');
+    }
+    if(m.includes('exclamation')){
+        toast.classList.add('invalid');
+    }
+
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
+
+}
+
+</script>
+
+</body>
+</html>
